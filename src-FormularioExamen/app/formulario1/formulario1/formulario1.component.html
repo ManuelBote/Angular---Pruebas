@@ -1,0 +1,56 @@
+<form [formGroup]="miform">
+
+    <mat-form-field>
+      <mat-label>Id</mat-label>
+      <mat-select name="id" formControlName="id">
+        <mat-option *ngFor="let n of numero" [value]="n">{{n}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="miform.get('id')?.hasError('required')">El valor es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <mat-select name="nombre" formControlName="nombre">
+          <mat-option *ngFor="let e of empleados" [value]="e.nombre">{{e.nombre}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="miform.get('nombre')?.hasError('required')">El valor es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Direccion</mat-label>
+        <mat-select name="direccion" formControlName="direccion">
+          <mat-option *ngFor="let e of empleados" [value]="e.direccion">{{e.direccion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="miform.get('direccion')?.hasError('required')">El valor es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cargo</mat-label>
+        <mat-select name="cargo" formControlName="cargo">
+          <mat-option *ngFor="let e of empleados" [value]="e.cargo">{{e.cargo}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="miform.get('cargo')?.hasError('required')">El valor es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Edad</mat-label>
+        <mat-select name="edad" formControlName="edad">
+          <mat-option *ngFor="let n of numeroEdad" [value]="n">{{n}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="miform.get('edad')?.hasError('required')">El valor es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Imagen</mat-label>
+        <mat-select name="imagen" formControlName="imagen" (ngModelChange)="cambiarImg()">
+          <mat-option *ngFor="let e of empleados" [value]="e.imagen"><img src="{{e.imagen}}" width="50px" height="50px"></mat-option>
+        </mat-select>
+        <mat-error *ngIf="miform.get('imagen')?.hasError('required')">El valor es requerido</mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <img src="{{img}}" width="100px" height="100px" *ngIf="!miform.get('imagen')?.hasError('required')">
+
+
+    <button type="submit" (click)="enviar()" *ngIf="miform.valid" mat-raised-button color="primary">Enviar Datos</button>
+    <button type="reset" mat-raised-button color="primary">Resetear</button>
+</form>

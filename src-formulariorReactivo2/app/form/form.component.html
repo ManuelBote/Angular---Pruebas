@@ -1,0 +1,54 @@
+<form [formGroup]="miform" (ngSubmit)="submitForm()">
+  <div class="example-container">
+    <!-- Zona de Email -->
+    <mat-form-field>
+      <mat-label>Email:</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" required>
+      <mat-error *ngIf="miform.get('email')?.hasError('required')">El email es requerido</mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
+    <!-- Zona de Fecha -->
+    <mat-form-field>
+      <mat-label>Fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="miform.get('fecha')?.hasError('required')">La fecha es requerida</mat-error>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+    <!-- Zona de Trabajo -->
+    <mat-form-field>
+      <mat-label>Selecciona cargo</mat-label>
+      <mat-select formControlName="cargo" required>
+        <mat-option value="Analista">Analista</mat-option>
+        <mat-option value="qa_tester">QA Tester</mat-option>
+        <mat-option value="full_stack">Full stack</mat-option>
+        <mat-option value="d_front">Diseñador Front</mat-option>
+      </mat-select>
+      <mat-error *ngIf="miform.get('cargo')?.hasError('required')">El cargo es requerido</mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
+    <!-- Zona de contraseña -->
+    <mat-form-field>
+      <mat-label>Contraseña:</mat-label>
+      <input type="password" matInput placeholder="" formControlName="ps" required>
+      <mat-error *ngIf="miform.get('ps')?.hasError('required')">La contraseña es requerida</mat-error>
+      <mat-error *ngIf="miform.get('ps')?.hasError('pattern')">La contraseña debe empezar con mayuscula, terminar con numero y contener 10 caracteres</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Repetir Contraseña:</mat-label>
+      <input type="password" matInput placeholder="" formControlName="r_ps" required>
+      <mat-error *ngIf="miform.get('r_ps')?.hasError('required')">La contraseña es requerida</mat-error>
+      <mat-error *ngIf="miform.get('r_ps')?.hasError('contraseñaNoCoincide')">Las contraseñas no coinciden</mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="miform.invalid">Enviar</button>
+
+  </div>
+
+</form>

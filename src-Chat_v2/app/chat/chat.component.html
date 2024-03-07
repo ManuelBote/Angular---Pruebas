@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-auto">
+
+      <div class="form-group">
+        <label for="">Mensaje</label>
+        <input type="text" name="mesnaje" id="mensaje" class="form-control" [(ngModel)]="msjchat.mensaje"
+        placeholder="Teclea mensaje" aria-describedby="helpId">
+        <button class="btn btn-primary m-2" (click)="enviarMensaje()">Enviar mensaje</button>
+        <button class="btn btn-danger m-2" (click)="listarMensajes()">Listar mensajes</button>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOMBRE</th>
+              <th>MENSAJE</th>
+              <th>FECHA</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let elemento of listaMensajes">
+              <td>{{elemento.id}}</td>
+              <td>{{elemento.usuario}}</td>
+              <td>{{elemento.mensaje}}</td>
+              <td>{{elemento.fecha}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

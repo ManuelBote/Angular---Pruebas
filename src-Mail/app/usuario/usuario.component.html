@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="d-flex justify-content-center row">
+    <div class="col-auto">
+
+      <label for="floatingInputGrid" style="margin-top: 30px;">Nombre de usuario</label>
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInputGrid"
+        placeholder="Usuario"
+        [(ngModel)]="usuario"
+      />
+      <label style="color:red;">{{mensaje}}</label>
+
+      <button type="submit" class="btn btn-info m-4" (click)="iniciar()">Iniciar Sesion</button>
+    </div>
+  </div>
+</div>

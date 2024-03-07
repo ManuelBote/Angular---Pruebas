@@ -1,0 +1,15 @@
+<div id="huerto">
+  <h2>Huerto</h2>
+  <br>
+  <span>Mensaje de huerto para hortaliza </span>
+  <input type="text" [(ngModel)]="mensajeParaHortaliza">
+  <p>Hortaliza dice a huerto {{mensajeDeHortaliza}}</p>
+  <p>Peticiones de Hortaliza (semilleros) a huerto {{peticionesSemilla}}</p>
+  <app-hortaliza
+    [mensajeDeEntradaHortaliza]="mensajeParaHortaliza"
+    (mensajeDeSalidaHortaliza)="actualizaMensajeDeHortaliza($event)"
+    (nsemilleros)="actualizarNumeroSemilleros($event)">
+  </app-hortaliza>
+
+
+</div>

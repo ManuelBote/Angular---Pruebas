@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-auto">
+      <app-cabecera></app-cabecera>
+
+      <h2>Titulo: {{ title }}</h2>
+      <h1 (mouseover)="cambiarNombre()" (mouseleave)="retornarNombre()">
+        Nombre del ciclo: {{ ciclo }}
+      </h1>
+
+      <input type="text" #user placeholder="Teclea nombre de usuario" />
+      <button class="btn btn-info btn-md m-2" (click)="cargarNombreUsuario(user.value)">Guardar</button>
+      <span>{{ nombreUsuario }}</span>
+
+      <app-pie></app-pie>
+    </div>
+  </div>
+</div>

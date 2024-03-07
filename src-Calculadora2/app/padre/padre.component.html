@@ -1,0 +1,16 @@
+<button (click)="calcular()">Calcular</button>
+<button (click)="generar()">Generar nuevo</button>
+<app-hijo
+[aleatorio1]="numero1"
+[aleatorio2]="numero2"
+(devolverNum1)="recibir1($event)"
+(devolverNum2)="recibir2($event)"
+>
+</app-hijo>
+
+<p>Numero 1: {{numero1}}</p>
+<p>Numero 2: {{numero2}}</p>
+<p>Resultado sumar: {{resultadoSuma}}</p>
+<p>Resultado restar: {{resultadoResta}}</p>
+<p>Resultado multiplicar: {{resultadoProducto}}</p>
+<p>Resultado dividir: {{resultadoDivision}}</p>

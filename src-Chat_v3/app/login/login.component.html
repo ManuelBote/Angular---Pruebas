@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="d-flex justify-content-center-row">
+    <div class="col-auto">
+
+      <mat-form-field>
+        <mat-label for="email">Correo del usuario</mat-label >
+        <input matInput type="text" name="usuario" id="usuario"
+         placeholder="Correo electronico" aria-describedby="helpId" [(ngModel)]="usuario.email">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field>
+        <mat-label  for="password">Contraseña</mat-label >
+        <input matInput type="password" name="password" id="password"
+         placeholder="Contraseña" aria-describedby="helpId" [(ngModel)]="usuario.pwd">
+      </mat-form-field>
+
+      <br>
+
+      <mat-checkbox class="example-margin" [(ngModel)]="privado">Privado</mat-checkbox>
+      <br><br>
+
+      <button mat-raised-button color="primary" (click)="loguear(usuario)">Login</button>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-auto ">
+    <h3>Componente 4</h3>
+
+    <input type="text" #texto>
+    <button (click)="aniadirTexto(texto.value, texto)">Añadir</button>
+
+    <table *ngFor="let c of contenido">
+      <tr>
+        <td>{{c}}</td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+

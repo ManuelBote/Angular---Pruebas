@@ -1,0 +1,5 @@
+<div>
+  <p>{{infoCabecera}}</p>
+  <input type="text" [(ngModel)]="claseNueva" (keyup)="enviarClase()">
+  <p [ngClass]="infoCabecera">Formato recibido desde el padre {{infoCabecera}}</p>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+
+  <form (ngSubmit)="enviarDatos()" [formGroup]="miformulario">
+
+    <div class="mb-3 form-control">
+      <label for="" class="form-label">Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control" placeholder="" aria-describedby="helpId"/>
+      <div *ngIf="miformulario.get('nombre')?.invalid" class="text-danger">
+        <div *ngIf="miformulario.get('nombre')?.errors?.['required']">Nombre Requerido</div>
+        <div *ngIf="miformulario.get('nombre')?.errors?.['maxLength']">El nombre debe contener minimo 2 caracteres</div>
+        <div *ngIf="miformulario.get('nombre')?.errors?.['minLength']">Nombre Requerido</div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-control">
+      <label for="" class="form-label">Apellido</label>
+      <input type="text" formControlName="apellido" class="form-control" placeholder="" aria-describedby="helpId"/>
+      <div *ngIf="miformulario.get('apellido')?.invalid" class="text-danger">
+        <div *ngIf="miformulario.get('apellido')?.errors?.['required']">Apellido Requerido</div>
+        <div *ngIf="miformulario.get('apellido')?.errors?.['maxLength']">El nombre debe contener minimo 2 caracteres</div>
+        <div *ngIf="miformulario.get('apellido')?.errors?.['minLength']">Nombre Requerido</div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-control">
+      <label for="" class="form-label">Fecha de nacimiento</label>
+      <input type="date" formControlName="fechaN" class="form-control" placeholder="" aria-describedby="helpId"/>
+      <div *ngIf="miformulario.get('fechaN')?.invalid" class="text-danger">
+        <div *ngIf="miformulario.get('fechaN')?.errors?.['required']">Fecha Requerida</div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-control">
+      <label for="" class="form-label">Tarjeta de credito</label>
+      <input type="text" formControlName="tCredito" class="form-control" placeholder="" aria-describedby="helpId"/>
+      <div *ngIf="miformulario.get('tCredito')?.invalid" class="text-danger">
+        <div *ngIf="miformulario.get('tCredito')?.errors?.['required']">Tarjeta de credito Requerida</div>
+        <div *ngIf="miformulario.get('tCredito')?.errors?.['pattern']">Requiere 25 caracteres numericos</div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-control">
+      <label for="" class="form-label">Contraseña</label>
+      <input type="password" formControlName="psw" class="form-control" placeholder="" aria-describedby="helpId"/>
+      <div *ngIf="miformulario.get('psw')?.invalid" class="text-danger">
+        <div *ngIf="miformulario.get('psw')?.errors?.['required']">Contraseña Requerida</div>
+        <div *ngIf="miformulario.get('psw')?.errors?.['pattern']">La contraseña no cumple los requisitos</div>
+      </div>
+    </div>
+
+    <input type="submit" [disabled]="!miformulario.valid" class="btn btn-primary">
+
+  </form>
+
+</div>

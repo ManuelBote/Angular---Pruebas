@@ -1,0 +1,13 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-auto">
+    <h3>Componente 2</h3>
+
+    <button class="btn btn-info m-3">{{contador}}</button>
+    <br>
+
+    <button #btn1 class="btn btn-primary m-3" [ngStyle]="{'background-color':colorF1}" (click)="iniciar(btn1, btn2)">Iniciar</button>
+    <button #btn2 class="btn btn-primary m-3" [ngStyle]="{'background-color':colorF2}" (click)="parar(btn2, btn2)">Parar</button>
+
+  </div>
+</div>
+

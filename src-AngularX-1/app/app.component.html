@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Subtexto</th>
+    <th scope="col">Imagen</th>
+
+  </tr>
+
+  <tr *ngFor="let x of pueblitodos">
+    <td scope="row">{{x.id}}</td>
+    <td>{{x.texto}}</td>
+    <td>{{x.subtexto}}</td>
+    <td><img [src]=x.imagen width="150px" height="100px"></td>
+  </tr>
+</table>

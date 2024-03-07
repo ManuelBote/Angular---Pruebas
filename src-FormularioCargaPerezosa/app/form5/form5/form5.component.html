@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="col-auto">
+
+      <h3>Decimas</h3>
+      <p>{{decimas}}</p>
+      <h3>Segundos</h3>
+      <p>{{segundos}}</p>
+      <h3>Minutos</h3>
+      <p>{{minutos}}</p>
+      <h3>Horas</h3>
+      <p>{{horas}}</p>
+
+      <app-temporizador
+      [decimas]="0"
+      (contadorDecimas)="actualizarDecimas($event)"
+      (contadorSegundos)="actualizarSegundos($event)"
+      (contadorMinutos)=" actualizaMinutos($event)"
+      (contadorHoras)="actualizarHoras($event)"
+      >
+      </app-temporizador>
+
+    </div>
+  </div>
+</div>

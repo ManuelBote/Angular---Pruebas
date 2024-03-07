@@ -1,0 +1,26 @@
+div{
+  background-color: coral;
+  height: 110px;
+  padding: 10px;
+}
+
+.clase1{
+  background-color: greenyellow;
+  height: 50px;
+  padding: 50px;
+}
+
+.clase2{
+  background-color: yellow;
+  height: 150px;
+}
+
+.clase3{
+  background-color: white;
+  height: 100px;
+}
+
+.clase4{
+  background-color: pink;
+  color: orange;
+}

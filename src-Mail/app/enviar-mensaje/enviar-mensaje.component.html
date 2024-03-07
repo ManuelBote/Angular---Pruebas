@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="d-flex justify-content-center row" style="flex-direction: column;">
+      <br><br>
+      <mat-label><h2>Usuario: {{usuario}}</h2></mat-label>
+      <input (keydown.enter)="buscarUsuario()" matInput [(ngModel)]="psw"/>
+
+      <br>
+
+      <mat-form-field>
+        <mat-label>Destinatario</mat-label>
+        <input matInput [(ngModel)]="msg.destinatario"/>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field>
+        <mat-label>Asunto</mat-label>
+        <input matInput [(ngModel)]="msg.asunto"/>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field>
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput [(ngModel)]="msg.mensaje"></textarea>
+      </mat-form-field>
+
+      <br>
+      <button (click)="enviar()" mat-raised-button color="accent">Enviar Mensaje</button>
+
+  </div>
+</div>
+
